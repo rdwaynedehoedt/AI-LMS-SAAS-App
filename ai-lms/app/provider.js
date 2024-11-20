@@ -20,7 +20,7 @@ function Provider({ children }) {
         console.log(result);
         if (result?.length == 0) {
             const userRESP = await db.insert(USER_TABLE).values({
-                name: user?.fullName,
+                userName: user?.username,
                 email: user?.primaryEmailAddress?.emailAddress,
             }).returning({ id: USER_TABLE.id });
 
