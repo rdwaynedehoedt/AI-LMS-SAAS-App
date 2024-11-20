@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Provider } from "./provider";
 
 //Google fonts 
 import { Outfit } from 'next/font/google';
@@ -13,7 +14,10 @@ export default function RootLayout({ children }) {
       <html lang="en">
         <body className={outfit.className}>
 
-          {children}
+          <Provider>
+            {children}
+          </Provider>
+
         </body>
       </html>
     </ClerkProvider>
